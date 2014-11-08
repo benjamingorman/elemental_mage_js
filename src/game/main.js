@@ -1,10 +1,18 @@
 var game = new Phaser.Game(1280, 800, Phaser.AUTO, 'game_frame');
-GameCtrl = {};
+
+var $ground_y;
+var $ground;
+var $clouds;
+var $backgroundHouse;
+var $platforms;
+var $players;
+var $projectiles;
+var $gameOver;
 
 game.state.add('Preloader', GameCtrl.Preloader);
 game.state.add('MainMenu', GameCtrl.MainMenu);
-game.state.add('Prestage', GameCtrl.Prestage);
-game.state.add('Stage01', GameCtrl.Stage01);
-game.state.add('Stage02', GameCtrl.Stage02);
+game.state.add('Instructions', GameCtrl.Instructions);
+game.state.add('About', GameCtrl.About);
+game.state.add('Play', GameCtrl.Play);
 
 game.state.start('Preloader');
