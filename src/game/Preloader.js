@@ -33,6 +33,11 @@ GameCtrl.Preloader.prototype = {
         ,{type:'spritesheet', key:'fireball_spritesheet',   url:"animations/projectiles/fireball_16x16.png",  width:16,  height:16}
         ,{type:'spritesheet', key:'airball_spritesheet',    url:"animations/projectiles/airball_16x16.png",   width:16,  height:16}
         ,{type:'spritesheet', key:'player2_spritesheet',    url:"animations/player2/spritesheet.png",         width:96,  height:96}
+        ,{type:'sound',       key:'hurt',                   url:"sounds/hurt.ogg"}
+        ,{type:'sound',       key:'wizards_keep',           url:"sounds/wizards_keep.ogg"}
+        ,{type:'sound',       key:'victory',                url:"sounds/victory.ogg"}
+        ,{type:'sound',       key:'power_up',               url:"sounds/power_up.ogg"}
+        ,{type:'sound',       key:'projectile_release',     url:"sounds/projectile_release.ogg"}
         ];
 
         game.load.crossOrigin = "Anonymous";
@@ -48,6 +53,9 @@ GameCtrl.Preloader.prototype = {
                     break;
                 case 'spritesheet':
                     game.load.spritesheet(asset.key, asset_url, asset.width, asset.height);
+                    break;
+                case 'sound':
+                    game.load.audio(asset.key, asset_url);
                     break;
             };
         };
